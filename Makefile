@@ -11,3 +11,6 @@ new-sketch:
 	mkdir -p ./sketches/$$sketch_name; \
 	cp ./template-sketch/* ./sketches/$$sketch_name; \
 	sed -i "s/###/$$sketch_name/" ./sketches/$$sketch_name/index.html
+
+lint:
+	npm run lint
