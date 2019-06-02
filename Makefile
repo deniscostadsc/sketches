@@ -4,7 +4,7 @@ run:
 	python -m http.server
 
 update-p5:
-	./update_p5.sh
+	./scripts/update_p5.sh
 
 new-sketch:
 	@read -p "What is the sketch name:" sketch_name; \

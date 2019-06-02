@@ -13,8 +13,8 @@ mv p5.min.js old_p5.min.js
 mv p5.sound.min.js old_p5.sound.min.js
 mv p5.dom.min.js old_p5.dom.min.js
 
-wget -c "https://github.com/processing/p5.js/releases/download/$LATEST_VERSION/p5.min.js"
-wget -c "https://github.com/processing/p5.js/releases/download/$LATEST_VERSION/p5.sound.min.js"
-wget -c "https://github.com/processing/p5.js/releases/download/$LATEST_VERSION/p5.dom.min.js"
+wget -qc "https://github.com/processing/p5.js/releases/download/$LATEST_VERSION/p5.min.js"
+wget -qc "https://github.com/processing/p5.js/releases/download/$LATEST_VERSION/p5.sound.min.js"
+wget -qc "https://github.com/processing/p5.js/releases/download/$LATEST_VERSION/p5.dom.min.js"
 
 rm old_*
