@@ -4,6 +4,7 @@ set -euo pipefail
 
 LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' \
     https://github.com/processing/p5.js/releases/latest)
+# shellcheck disable=SC2001
 LATEST_VERSION=$(echo "$LATEST_RELEASE" |\
     sed -e 's/.*"tag_name":"\([^"]*\)".*/\1/')
 
