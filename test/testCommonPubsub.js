@@ -14,9 +14,7 @@ describe('Common', () => {
         assert.equal(pubsub.countNotifications(), 1)
         assert.equal(pubsub.countSubscribers('subscribe'), 1)
       });
-    });
 
-    describe('subscribe', () => {
       it('must be able to subscribe many', () => {
         assert.equal(pubsub.countNotifications(), 0)
         pubsub.subscribe('subscribe', () => {})
@@ -48,9 +46,7 @@ describe('Common', () => {
         assert.equal(pubsub.countSubscribers('specific clean'), 0)
         assert.equal(pubsub.countSubscribers('non-specific clean'), 1)
       });
-    });
 
-    describe('full clean subscribers', () => {
       it('must be able to clean all subscribers', () => {
         pubsub.subscribe('specific clean', () => {})
         pubsub.subscribe('full clean', () => {})
@@ -62,9 +58,7 @@ describe('Common', () => {
         pubsub.clean()
         assert.equal(pubsub.countNotifications(), 0)
       });
-    });
 
-    describe('errors on clean', () => {
       it('must be able sure to remove notification subscribers', () => {
         pubsub.subscribe('correct', () => {})
         assert.equal(pubsub.countNotifications(), 1)
