@@ -26,7 +26,7 @@ describe('Common', () => {
     });
 
     describe('publish', () => {
-      it('must be able notified', () => {
+      it('must be able to notify', () => {
         let num = 0
         pubsub.subscribe('increment', () => {num++})
         pubsub.publish('increment')
