@@ -1,4 +1,4 @@
-PHONY: run update-p5 new-sketch
+.PHONY: run update-p5 new-sketch
 
 run:
 	python -m http.server
