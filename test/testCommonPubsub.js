@@ -34,6 +34,19 @@ describe('Common', () => {
         pubsub.publish('increment')
         assert.equal(num, 2)
       });
+
+      it('must throw error when notification does not exist', () => {
+        pubsub.subscribe('existing', () => {})
+        assert.throws(
+          () => {
+            pubsub.publish('non-existing')
+          },
+          {
+            name: 'Error',
+            message: 'You must specify a existing notification'
+          }
+        )
+      });
     });
 
     describe('clean notification', () => {
@@ -59,16 +72,16 @@ describe('Common', () => {
         assert.equal(pubsub.countNotifications(), 0)
       });
 
-      it('must be able sure to remove notification subscribers', () => {
-        pubsub.subscribe('correct', () => {})
-        assert.equal(pubsub.countNotifications(), 1)
-        assert.equal(pubsub.countSubscribers('correct'), 1)
+      it('must throw error when clean non-existing notification', () => {
+        pubsub.subscribe('existing', () => {})
         assert.throws(
           () => {
-            pubsub.clean('not correct')
+            pubsub.clean('non-existing')
           },
-          Error,
-          'You must specify a existing notification'
+          {
+            name: 'Error',
+            message: 'You must specify a existing notification'
+          }
         )
       });
     });

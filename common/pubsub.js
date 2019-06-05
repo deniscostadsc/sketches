@@ -5,6 +5,10 @@ class Pubsub {
   }
 
   publish (notification) {
+    if (!this._hasNotification(notification)) {
+      throw new Error('You must specify a existing notification')
+    }
+
     this.subscribers[notification].forEach(subscriber => {
       subscriber()
     })
@@ -33,13 +37,17 @@ class Pubsub {
   }
 
   clean (notification) {
-    if (notification && this.subscribers[notification]) {
+    if (this._hasNotification(notification)) {
       this.subscribers[notification] = []
     } else if (!notification) {
       this.subscribers = {}
     } else {
       throw new Error('You must specify a existing notification')
     }
+  }
+
+  _hasNotification (notification) {
+    return !!notification && this.subscribers[notification]
   }
 }
 
