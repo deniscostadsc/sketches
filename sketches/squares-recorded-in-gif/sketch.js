@@ -8,7 +8,7 @@ const capturer = new CCapture({
   framerate: 60,
   format: 'gif',
   workersPath: '../../lib/',
-  verbose: true,
+  verbose: true
 })
 
 let gifLength = 100
