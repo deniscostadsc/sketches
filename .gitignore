@@ -1,3 +1,4 @@
-node_modules/
-/lib/old_*
 *~
+.nyc_output/
+/lib/old_*
+node_modules/
