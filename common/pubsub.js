@@ -54,5 +54,5 @@ class Pubsub {
 try {
   module.exports = exports = new Pubsub()
 } catch (e) {
-  const pubsub = new Pubsub()
+  window.pubsub = new Pubsub()
 }
