@@ -4,7 +4,7 @@
   "description": "a project to learn Javascript while draw",
   "scripts": {
     "test": "nyc mocha",
-    "lint": "eslint common/**/*.js sketches/**/*.js"
+    "lint": "eslint sketches/**/*.js"
   },
   "repository": {
     "type": "git",
