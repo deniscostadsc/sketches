@@ -1,7 +1,7 @@
 .PHONY: run update-p5 new-sketch lint test
 
 run:
-	python -m http.server
+	python3 -m http.server
 
 update-p5:
 	./scripts/update_p5.sh
