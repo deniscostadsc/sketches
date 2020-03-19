@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+set -xv
 
 function download_released_file_from_github {
     user_repo=$1
@@ -23,6 +24,5 @@ function download_released_file_from_github {
     cd - || exit 1
 }
 
-download_released_file_from_github "processing/p5.js" "p5.dom.min.js" "lib"
-download_released_file_from_github "processing/p5.js" "p5.min.js" "lib"
-download_released_file_from_github "processing/p5.js" "p5.sound.min.js" "lib"
+download_released_file_from_github "processing/p5.js" "p5.sound.js" "lib"
+download_released_file_from_github "processing/p5.js" "p5.js" "lib"
