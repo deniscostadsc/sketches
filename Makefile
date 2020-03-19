@@ -15,6 +15,3 @@ new-sketch:
 lint:
 	npm run lint
 	shellcheck -x $(shell find . -name '*.sh' -not -path "./node_modules/*")
-
-test:
-	npm test
