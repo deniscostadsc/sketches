@@ -6,6 +6,8 @@ const CANVAS_WIDTH = CANVAS_SIZE + SHIFT_FOR_LETTERS
 const CANVAS_HEIGHT = CANVAS_SIZE + SHIFT_FOR_LETTERS
 const BOARD_SIDE = 8
 const SQUARE_SIZE = CANVAS_SIZE / BOARD_SIDE
+const LETTERS = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
+const NUMBERS = ['8', '7', '6', '5', '4', '3', '2', '1']
 
 const chessBoard = new Array(BOARD_SIDE)
 
@@ -38,13 +40,13 @@ function setup () {
     isBlack = !isBlack
   }
 
-  ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'].forEach((letter, index) => {
+  LETTERS.forEach((letter, index) => {
     textSize(24)
     fill(0, 0, 0)
     text(letter, SQUARE_SIZE * (index + 1), 17)
   })
 
-  ['8', '7', '6', '5', '4', '3', '2', '1'].forEach((number, index) => {
+  NUMBERS.forEach((number, index) => {
     textSize(24)
     fill(0, 0, 0)
     text(number, 6, SQUARE_SIZE * (index + 1))
